@@ -1,0 +1,21 @@
+#
+# For a description of the syntax of this configuration file,
+# see the file kconfig-language.txt in the NuttX tools repository.
+#
+
+config EXAMPLES_DHT
+	tristate "DHT Demo"
+	default n
+	---help---
+		Enable distributed hash table (DHT) example
+
+if EXAMPLES_DHT
+
+config EXAMPLES_DHT_PROGNAME
+	string "Program name"
+	default "dht"
+	---help---
+		This is the name of the program that will be used when the NSH ELF
+		program is installed.
+
+endif
